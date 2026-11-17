@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TSJ Premier Cleaning | House Cleaning Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F9FA; --surface:#FFFFFF; --ink:#0F2A43; --muted:#4B6275; --line:#D6E1E7;
+  --sea:#2A9D93; --sea-soft:#DDF2EF; --brass:#B88A2B; --on-ink:#F6F9FA;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B1A29; --surface:#112437; --ink:#EAF2F6; --muted:#9FB5C4; --line:#23394D;
+    --sea:#4FC3B7; --sea-soft:#14333A; --brass:#D9AE55; --on-ink:#0B1A29; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B1A29; --surface:#112437; --ink:#EAF2F6; --muted:#9FB5C4; --line:#23394D;
+  --sea:#4FC3B7; --sea-soft:#14333A; --brass:#D9AE55; --on-ink:#0B1A29; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.6}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0}
+.logo{font-family:var(--display);font-weight:800;font-size:1.25rem;text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.mark{width:2.2rem;height:2.2rem;border-radius:50% 50% 50% 8px;background:var(--ink);color:var(--on-ink);display:grid;place-items:center;font-size:.8rem;letter-spacing:0}
+nav{display:flex;gap:1.25rem;align-items:center;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--ink);color:var(--on-ink);padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--sea);color:#fff}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:3.5rem 0 4.5rem}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:34em;margin:1.2rem 0 1.8rem}
+.badges{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;list-style:none;margin:1.5rem 0 0}
+.badges li{background:var(--sea-soft);color:var(--ink);padding:.35rem .9rem;border-radius:999px;font-size:.92rem;font-weight:500}
+.quote{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:1.6rem;box-shadow:0 18px 40px -24px rgba(15,42,67,.35)}
+.quote h2{font-size:1.4rem;margin-bottom:1rem}
+.field{margin-bottom:1rem}
+.field label,.field legend{display:block;font-weight:600;font-size:.92rem;margin-bottom:.35rem;padding:0}
+fieldset{border:0;padding:0;margin:0 0 1rem}
+select,input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem}
+.seg{display:flex;gap:.4rem;flex-wrap:wrap}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label{margin:0;border:1px solid var(--line);border-radius:999px;padding:.4rem .95rem;cursor:pointer;font-weight:500;background:var(--bg)}
+.seg input:checked+label{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.seg input:focus-visible+label{outline:3px solid var(--brass);outline-offset:2px}
+.price{display:flex;align-items:baseline;justify-content:space-between;border-top:1px dashed var(--line);padding-top:1rem;margin-top:.5rem}
+.price strong{font-family:var(--display);font-size:2.4rem;color:var(--sea);transition:transform .25s}
+.price strong.bump{transform:scale(1.08)}
+.fine{font-size:.85rem;color:var(--muted);margin:.6rem 0 0}
+section{padding:4rem 0}
+section h2.title{font-size:clamp(1.9rem,4vw,2.7rem);max-width:18em}
+.sub{color:var(--muted);max-width:38em;margin:.8rem 0 2.2rem}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc{border-top:4px solid var(--sea);background:var(--surface);padding:1.5rem;border-radius:4px 4px 18px 18px}
+.svc:nth-child(2){border-color:var(--brass)}
+.svc:nth-child(3){border-color:var(--ink)}
+.svc h3{font-size:1.4rem;margin-bottom:.5rem}
+.svc p{color:var(--muted);margin:0 0 1rem}
+.svc ul{margin:0;padding-left:1.1rem}
+.svc li{margin:.25rem 0}
+.band{background:var(--ink);color:var(--on-ink)}
+.band .sub{color:inherit;opacity:.8}
+.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.checks h3{font-size:1.15rem;margin-bottom:.5rem;color:var(--brass)}
+.band .checks h3{color:#E3BE70}
+.checks ul{margin:0;padding:0;list-style:none}
+.checks li{padding:.2rem 0 .2rem 1.4rem;position:relative}
+.checks li::before{content:"✓";position:absolute;left:0;color:#7FD1C7;font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;counter-reset:s;padding:0;list-style:none}
+.steps li{counter-increment:s;padding-top:3.2rem;position:relative}
+.steps li::before{content:counter(s);position:absolute;top:0;left:0;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--sea-soft);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800}
+.steps h3{font-size:1.2rem;margin-bottom:.3rem}
+.steps p{margin:0;color:var(--muted)}
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem}
+.contact form{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:1.6rem}
+.details p{margin:.3rem 0}
+.details a{font-weight:600}
+footer{border-top:1px solid var(--line);padding:1.5rem 0 2rem;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+@media (max-width:820px){
+  .hero,.contact{grid-template-columns:1fr;gap:2rem}
+  .services,.checks,.steps{grid-template-columns:1fr}
+  nav a.hide{display:none}
+  section{padding:3rem 0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="logo" href="#top"><span class="mark">TSJ</span>Premier Cleaning</a>
+    <nav>
+      <a class="hide" href="#services">Services</a>
+      <a class="hide" href="#included">What’s included</a>
+      <a class="hide" href="#how">How it works</a>
+      <a class="btn" href="#contact">Book a clean</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <h1>A spotless home, without lifting a finger.</h1>
+        <p class="lead">TSJ Premier Cleaning sends a careful, vetted crew to your door on a schedule that suits you. Tell us the size of your home and see your price in seconds.</p>
+        <a class="btn" href="#contact">Request a booking</a>
+        <ul class="badges">
+          <li>Insured &amp; background-checked</li>
+          <li>Eco-friendly products</li>
+          <li>Re-clean guarantee</li>
+        </ul>
+      </div>
+
+      <div class="quote" aria-labelledby="qt">
+        <h2 id="qt">Get an instant estimate</h2>
+        <div class="field">
+          <label for="type">Type of clean</label>
+          <select id="type">
+            <option value="1">Standard clean</option>
+            <option value="1.6">Deep clean</option>
+            <option value="1.8">Move-in / move-out clean</option>
+          </select>
+        </div>
+        <fieldset>
+          <legend>Bedrooms</legend>
+          <div class="seg" id="beds"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Bathrooms</legend>
+          <div class="seg" id="baths"></div>
+        </fieldset>
+        <div class="field">
+          <label for="freq">How often?</label>
+          <select id="freq">
+            <option value="1">One time</option>
+            <option value="0.95">Monthly (5% off)</option>
+            <option value="0.9">Every 2 weeks (10% off)</option>
+            <option value="0.85">Weekly (15% off)</option>
+          </select>
+        </div>
+        <div class="price" aria-live="polite">
+          <span>Estimated price</span>
+          <strong id="total">$0</strong>
+        </div>
+        <p class="fine">Estimates are a starting point. We confirm your final price before your first visit.</p>
+        <p class="fine" style="font-size:1rem;margin-top:.9rem">Prefer to talk? Call <a href="tel:+19785953586" style="font-weight:600">(978) 595-3586</a> for a quote.</p>
+      </div>
+    </div>
+  </main>
+
+  <section id="services">
+    <h2 class="title">Three ways to get your home back</h2>
+    <p class="sub">Pick the clean that fits the moment. Every visit is done by the same trained team whenever possible.</p>
+    <div class="services">
+      <article class="svc">
+        <h3>Standard clean</h3>
+        <p>Regular upkeep so your home always feels fresh.</p>
+        <ul><li>Dusting and surface wipe-down</li><li>Vacuuming and mopping</li><li>Kitchen and bathrooms refreshed</li></ul>
+      </article>
+      <article class="svc">
+        <h3>Deep clean</h3>
+        <p>For the first visit, a seasonal reset, or a long-overdue scrub.</p>
+        <ul><li>Everything in a standard clean</li><li>Baseboards and door frames</li><li>Inside oven, fridge and cabinets</li></ul>
+      </article>
+      <article class="svc">
+        <h3>Move-in / move-out</h3>
+        <p>Leave it ready for the next chapter, or start yours in a clean space.</p>
+        <ul><li>Top-to-bottom empty-home clean</li><li>Inside all appliances and closets</li><li>Windows and tracks wiped</li></ul>
+      </article>
+    </div>
+  </section>
+</div>
+
+<section class="band" id="included">
+  <div class="wrap">
+    <h2 class="title">What’s included in every visit</h2>
+    <p class="sub">A consistent checklist, so nothing gets missed.</p>
+    <div class="checks">
+      <div><h3>Kitchen</h3><ul><li>Counters and sink scrubbed</li><li>Appliance exteriors wiped</li><li>Floors vacuumed and mopped</li></ul></div>
+      <div><h3>Bathrooms</h3><ul><li>Toilets, tubs and showers disinfected</li><li>Mirrors and fixtures polished</li><li>Floors mopped</li></ul></div>
+      <div><h3>Living areas &amp; bedrooms</h3><ul><li>Dusting of all reachable surfaces</li><li>Beds made on request</li><li>Carpets vacuumed</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section id="how">
+    <h2 class="title">Booking takes three steps</h2>
+    <p class="sub">No contracts and no hidden fees.</p>
+    <ol class="steps">
+      <li><h3>Tell us about your home</h3><p>Use the estimate tool or send a quick message with your details.</p></li>
+      <li><h3>Choose your day</h3><p>We confirm your price and offer the time slots that work for you.</p></li>
+      <li><h3>Come home to clean</h3><p>Your crew arrives with supplies and equipment. You don’t need to be there.</p></li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div class="details">
+        <h2 class="title">Ready for a cleaner home?</h2>
+        <p class="sub">Send your details and we’ll reply with a confirmed quote.</p>
+        <p><strong>Phone:</strong> <a href="tel:+19785953586">(978) 595-3586</a></p>
+        <p><strong>Email:</strong> <a href="mailto:tjohnsonbacc@gmail.com">tjohnsonbacc@gmail.com</a></p>
+        <p><strong>Hours:</strong> Mon–Sat, 8am–6pm</p>
+        <p><strong>Location:</strong> Westfield, MA</p>
+        <p><strong>Service area:</strong> Westfield and nearby cities</p>
+      </div>
+      <form id="form">
+        <div class="field"><label for="n">Name</label><input id="n" type="text" required autocomplete="name"></div>
+        <div class="field"><label for="p">Phone or email</label><input id="p" type="text" required></div>
+        <div class="field"><label for="m">Tell us about your home</label><textarea id="m" rows="4" placeholder="Bedrooms, bathrooms, pets, preferred days…"></textarea></div>
+        <button class="btn" type="submit">Send request</button>
+        <p class="fine" id="note">This opens your email app with your request ready to send.</p>
+      </form>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap"><span>© 2026 TSJ Premier Cleaning. All rights reserved.</span><span>Serving Westfield &amp; nearby cities</span></div>
+</footer>
+
+<script>
+(function(){
+  var beds=[1,2,3,4,5], baths=[1,2,3,4];
+  function seg(id,vals,name,def){
+    var el=document.getElementById(id);
+    vals.forEach(function(v){
+      var i=document.createElement('input');i.type='radio';i.name=name;i.id=name+v;i.value=v;if(v===def)i.checked=true;
+      var l=document.createElement('label');l.htmlFor=i.id;l.textContent=v===5&&name==='bed'?'5+':v;
+      el.appendChild(i);el.appendChild(l);
+      i.addEventListener('change',calc);
+    });
+  }
+  seg('beds',beds,'bed',2);seg('baths',baths,'bath',1);
+  var total=document.getElementById('total');
+  function calc(){
+    var b=+document.querySelector('input[name=bed]:checked').value;
+    var t=+document.querySelector('input[name=bath]:checked').value;
+    var type=+document.getElementById('type').value;
+    var f=+document.getElementById('freq').value;
+    var table={1:[90,110,130,150],2:[120,140,160,180],3:[150,170,190,210],4:[180,200,220,240],5:[210,230,250,275]};
+    var price=Math.round(table[b][t-1]*type*f);
+    total.textContent='$'+price;
+    total.classList.add('bump');setTimeout(function(){total.classList.remove('bump')},250);
+  }
+  document.getElementById('type').addEventListener('change',calc);
+  document.getElementById('freq').addEventListener('change',calc);
+  calc();
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var b=document.querySelector('input[name=bed]:checked').value, t=document.querySelector('input[name=bath]:checked').value;
+    var body='Name: '+document.getElementById('n').value+'\nContact: '+document.getElementById('p').value+
+      '\nService: '+document.getElementById('type').selectedOptions[0].text+'\nBedrooms: '+b+'\nBathrooms: '+t+
+      '\nFrequency: '+document.getElementById('freq').selectedOptions[0].text+'\nEstimate: '+total.textContent+
+      '\n\n'+document.getElementById('m').value;
+    window.location.href='mailto:tjohnsonbacc@gmail.com?subject='+encodeURIComponent('Cleaning request from '+document.getElementById('n').value)+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
